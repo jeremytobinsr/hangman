@@ -1,0 +1,2 @@
+{"name":"hangman","version":"1.0.0","engine":{"node":"^18.18"},"type":"module","main":"index.js","author":"Jeremy Tobin Sr","repository":{"type":"git","url":"git+https://github.com/jeremytobinsr/hangman.git"},"dependencies":{"readline-sync":"^1.4.10"}}
+
