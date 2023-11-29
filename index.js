@@ -114,11 +114,7 @@ const startGame = () => {
 
 startGame();
 
-//look for the bold letters, those are the things you should change
 
-//also, idk if you have one yet, but you also need a word bank.js file
-//with an array
 
-//const wordBank = ['The Book'];
+const wordBank = ['The Book'];
 export default wordBank;
-//in the array just put whatever words you want
