@@ -1,6 +1,6 @@
 import readline from 'readline';
 import wordBank from './word-bank.js';
-
+export default wordBank;
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -25,12 +25,11 @@ const displayWord = (word, guessedLetters) => {
 
 const drawStickman = (incorrectGuesses) => {
   const Stickman = [ 
-    '   O',
-    '   |',
-    '  /|\','
-      / \'
-  
-
+     '   O',
+     '   |',
+     '  /|\','
+     `  / \`,`
+  ]
   console.log('\nIncorrect Guesses:');
   for (let i = 0; i < incorrectGuesses; i++) {
     console.log(Stickman[i]);
@@ -54,7 +53,7 @@ const startGame = () => {
     console.log('Push Down Ctrl + c To End Your Game.'); 
 
     const playAgain = () => {
-      rl.question('Test Yourself Again?! (yes/no)): ', answer => 
+      rl.question('Test Yourself Again?! (yes/no)): ', answer => {
         if (answer.toLowerCase() === 'yes') {
           playRound();
         } else {
@@ -63,14 +62,15 @@ const startGame = () => {
           console.log('Losses:', losses);
           rl.close();
         }
-      }
+      })
     };
 
     const playOneRound = () => {
+      
       console.log('\nWord:', displayWord(targetWord, guessedLetters));
       console.log('Guessed Letters:', guessedLetters.join(', '));
       console.log('Attempts Left:', 4 - incorrectGuesses);
-
+      
       rl.question('Guess A Letter: ', answer => {
 
       const guessedLetter = answer.toLowerCase();
@@ -116,5 +116,5 @@ startGame();
 
 
 
-const wordBank = ['The Book'];
-export default wordBank;
+const wordBank = ['Clerks, Tusk, Mallrats'];
+};
